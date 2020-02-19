@@ -89,6 +89,7 @@ body {
     background-image: url("../include/icons/read-more.svg");
     background-repeat: no-repeat;
     background-position: center;
+    transition: 0.2s ease-in-out;
 }
 
 .read-more {
@@ -161,7 +162,13 @@ body {
         min-width: 224px;
         margin-bottom: 16px;
     }
+
+    .title-block {
+        background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);
+    }
+
 }
+
 
 @media screen and (max-width: 768px) {
     .brand-block__brands {
@@ -169,3 +176,9 @@ body {
     }
 }
 
+button:active, button:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
