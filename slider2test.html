@@ -134,18 +134,6 @@ var mySwiper = new Swiper('.swiper-container', {
 
         if (window.innerWidth <= 768) {
 
-
-
-            if (window.mySwiper.destroyed === true){
-
-
-                var mySwiper = new Swiper('.swiper-container', {
-                    pagination: {
-                        el: '.swiper-pagination',
-                    },
-                });
-
-
                 let hiddenElements = document.querySelectorAll('.brand-block__brands');
                 for (let i = 0; i < hiddenElements.length; i++) {
 
@@ -159,9 +147,14 @@ var mySwiper = new Swiper('.swiper-container', {
                     document.querySelector('.swiper-pagination').style.display = 'block';
                 }
 
-
-
+            if (document.querySelector('.swiper-container-initialized') === null){
+                var mySwiper = new Swiper('.swiper-container', {
+                    pagination: {
+                        el: '.swiper-pagination',
+                    },
+                });
             }
+
 
     } else {
 
