@@ -132,6 +132,24 @@
 
 
     function swiperOnOff() {
+        if (typeof mySwiper === "undefined"){
+            var mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
+
+            let hiddenElements = document.querySelectorAll('.brand-block__brands');
+            for (let i = 0; i < hiddenElements.length; i++) {
+
+                hiddenElements[i].classList.add('swiper-slide');
+            }
+        }
+
+
+
+
+
        if (document.querySelector('.brand-block') !== null) {
            let hiddenBrandBlock = document.querySelector('.brand-block');
        }
