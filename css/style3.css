@@ -83,6 +83,7 @@ body {
     margin-top: 8px;
     margin-bottom: 24px;
     display: none;
+
 }
 
 .icon-read-more {
@@ -95,7 +96,7 @@ body {
 }
 
 .read-more {
-    font-weight: 600;
+    font-weight: 500;
     border: none;
     background: none;
     color: #1B1C21;
