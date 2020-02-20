@@ -83,6 +83,8 @@
             </div>
             <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
+
+
         </div>
 
 
@@ -111,6 +113,14 @@
 
 <script>
 
+
+
+
+
+
+
+
+
 var mySwiper = new Swiper('.swiper-container', {
     pagination: {
         el: '.swiper-pagination',
@@ -124,20 +134,9 @@ var mySwiper = new Swiper('.swiper-container', {
 
         if (window.innerWidth <= 768) {
 
-            let hiddenElements = document.querySelectorAll('.brand-block__brands');
-            for (let i = 0; i < hiddenElements.length; i++) {
 
-                hiddenElements[i].classList.add('swiper-slide');
-            }
 
-            if (document.querySelector('.brand-block') !== null) {
-                document.querySelector('.brand-block').classList.remove('brand-block');
-            }
-            if (document.querySelector('.swiper-pagination').style.display === "none") {
-                document.querySelector('.swiper-pagination').style.display = 'block';
-            }
-
-            if (window.mySwiper === undefined){
+            if (window.mySwiper.destroyed === true){
 
 
                 var mySwiper = new Swiper('.swiper-container', {
@@ -145,6 +144,23 @@ var mySwiper = new Swiper('.swiper-container', {
                         el: '.swiper-pagination',
                     },
                 });
+
+
+                let hiddenElements = document.querySelectorAll('.brand-block__brands');
+                for (let i = 0; i < hiddenElements.length; i++) {
+
+                    hiddenElements[i].classList.add('swiper-slide');
+                }
+
+                if (document.querySelector('.brand-block') !== null) {
+                    document.querySelector('.brand-block').classList.remove('brand-block');
+                }
+                if (document.querySelector('.swiper-pagination').style.display === "none") {
+                    document.querySelector('.swiper-pagination').style.display = 'block';
+                }
+
+
+
             }
 
     } else {
