@@ -114,24 +114,65 @@
 
 
 
-    if(window.innerWidth < 768) {
 
-        var mySwiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
-    }
+//
+//
+//    function swiperOnOff() {
+//
+//        if (window.innerWidth > 768 && mySwiper !== undefined) {
+//            mySwiper.destroy(true, true);
+//            document.querySelector('.swiper-pagination').style.display = 'none';
+//        }
+//    }
+//
+//    window.onresize = swiperOnOff;
+
+
+
 
 
     function swiperOnOff() {
+       if (document.querySelector('.brand-block') !== null) {
+           let hiddenBrandBlock = document.querySelector('.brand-block');
+       }
 
-        if (window.innerWidth > 768 && mySwiper !== undefined) {
-            mySwiper.destroy(false, true);
+        let swiperWrapper = document.querySelector(".swiper-wrapper");
+        let swiperSlide = document.querySelector(".swiper-slide");
+
+        if (window.innerWidth <= 768) {
+            if (document.querySelector('.brand-block') !== null) {
+                document.querySelector('.brand-block').classList.remove('brand-block');
+            }
+
+            document.querySelector('.swiper-pagination').style.display = 'block';
+
+    } else {
+
+            if (document.querySelector('.brand-block') !== null) {
+                let hiddenBrandBlock = document.querySelector('.brand-block');
+            }
+            if (typeof mySwiper !== "undefined"){
+                mySwiper.destroy(true, true);
+
+            }
+
+            document.querySelector('.swiper-pagination').style.display = 'none';
+            swiperWrapper.classList.add('brand-block');
+            let hiddenElements = document.querySelectorAll('.brand-block__brands');
+            for (let i = 0; i < hiddenElements.length; i++) {
+                if (hiddenElements[i].classList.contains("swiper-slide")) {
+                    hiddenElements[i].classList.remove('swiper-slide');
+                }
+            }
         }
     }
 
     window.onresize = swiperOnOff;
+
+
+
+
+
 
 
 
