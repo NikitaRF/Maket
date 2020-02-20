@@ -140,13 +140,6 @@ var mySwiper = new Swiper('.swiper-container', {
                     hiddenElements[i].classList.add('swiper-slide');
                 }
 
-                if (document.querySelector('.brand-block') !== null) {
-                    document.querySelector('.brand-block').classList.remove('brand-block');
-                }
-                if (document.querySelector('.swiper-pagination').style.display === "none") {
-                    document.querySelector('.swiper-pagination').style.display = 'block';
-                }
-
             if (document.querySelector('.swiper-container-initialized') === null){
                 var mySwiper = new Swiper('.swiper-container', {
                     pagination: {
@@ -163,11 +156,10 @@ var mySwiper = new Swiper('.swiper-container', {
                 mySwiper.destroy(true, true);
             }
 
-            document.querySelector('.swiper-pagination').style.display = 'none';
+
             let hiddenElements = document.querySelectorAll('.brand-block__brands');
-            let swiperWrapper = document.querySelector(".swiper-wrapper");
-            let swiperSlide = document.querySelector(".swiper-slide");
-            swiperWrapper.classList.add('brand-block');
+
+
             for (let i = 0; i < hiddenElements.length; i++) {
                 if (hiddenElements[i].classList.contains("swiper-slide")) {
                     hiddenElements[i].classList.remove('swiper-slide');

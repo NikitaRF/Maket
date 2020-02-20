@@ -33,12 +33,7 @@ body {
     margin: 0;
  }
 
-.brand-block {
-    margin-top: 16px;
-    margin-left: 16px;
-    overflow: auto;
-    display: flex;
-}
+
 
 .brand-block__brands{
     background-color: #FFFFFF;
@@ -172,6 +167,17 @@ body {
         background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);
     }
 
+    .brand-block {
+        margin-top: 16px;
+        margin-left: 16px;
+        overflow: auto;
+        display: flex;
+    }
+
+    .swiper-pagination{
+        display:none;
+    }
+
 }
 
 
@@ -189,6 +195,10 @@ body {
         width: 24px;
         height: 85px;
         z-index: 1100;
+    }
+
+    .swiper-pagination{
+        display:block !important;
     }
 
 }
