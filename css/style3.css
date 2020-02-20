@@ -28,7 +28,8 @@ body {
 }
 
 .title-block__title{
-    padding: 16px;
+    padding: 16px 24px;
+    margin: 0;
  }
 
 .brand-block {
