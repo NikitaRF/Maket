@@ -5,15 +5,17 @@ window.onload = function() {
 
 
     if(window.innerWidth <= 768) {
+
         hiddenBrandBlock.classList.remove('brand-block');
     }
 
-    if(window.innerWidth >= 768) {
+    if(window.innerWidth > 768) {
 
-        if (typeof window.mySwiper !== "undefined"){
-            window.mySwiper.destroy(true, true);
+        if (typeof mySwiper !== "undefined"){
+            mySwiper.destroy(true, true);
             document.querySelector('.swiper-pagination').style.display = 'none';
         }
+
 
         let hiddenElements = document.querySelectorAll('.brand-block__brands');
 
