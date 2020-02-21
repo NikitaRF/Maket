@@ -95,47 +95,6 @@
 </div>
 
 <script src="./js/swiper.min.js"></script>
-<script>
-
-    let hiddenElements = document.querySelectorAll('.brand-block__brands');
-
-    function swiperOnOff() {
-
-        if (window.innerWidth <= 768) {
-                for (let i = 0; i < hiddenElements.length; i++) {
-                    if (hiddenElements[i].classList.contains('swiper-slide') === false) {
-                        hiddenElements[i].classList.add('swiper-slide');
-                    }
-                }
-
-            if (document.querySelector('.swiper-container-initialized') === null){
-                var mySwiper = new Swiper('.swiper-container', {
-                    pagination: {
-                        el: '.swiper-pagination',
-                    },
-                });
-                console.log(1)
-            }
-
-    } else {
-
-            if (typeof mySwiper !== "undefined"){
-                mySwiper.destroy(true, true);
-                console.log(2)
-            }
-
-            for (let i = 0; i < hiddenElements.length; i++) {
-                if (hiddenElements[i].classList.contains('swiper-slide')) {
-                    hiddenElements[i].classList.remove('swiper-slide');
-
-                }
-            }
-        }
-    }
-
-    window.onresize = swiperOnOff;
-
-</script>
 </body>
 </html>
 
