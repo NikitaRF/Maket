@@ -62,6 +62,7 @@ window.onload = function bbb () {
 
 
 
+
     window.onresize = swiperInitoff;
 
 
