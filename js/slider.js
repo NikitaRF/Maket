@@ -26,7 +26,7 @@ window.onload = function bbb () {
     //slider swiper:
 
 
-    var mySwiper = undefined;
+    let mySwiper = undefined;
     function swiperInitoff() {
 
     if (window.innerWidth <= 768 && mySwiper == undefined) {
