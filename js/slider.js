@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function bbb () {
 
     let hiddenElements = document.querySelectorAll('.brand-block__brands');
     let iconReadMore = document.querySelector('.icon-read-more');
@@ -25,16 +25,6 @@ window.onload = function() {
 
     //slider swiper:
 
-    if(window.innerWidth <= 768) {
-
-        var mySwiper = new Swiper('.swiper-container', {
-            pagination: {
-                el: '.swiper-pagination',
-            },
-        });
-
-    }
-
     if(window.innerWidth > 768) {
 
         for (let i = 0; i < hiddenElements.length; i++) {
@@ -45,49 +35,111 @@ window.onload = function() {
         }
     }
 
+    var mySwiper = undefined;
+    function swiperInitoff() {
 
+    if (window.innerWidth <= 768 && mySwiper == undefined) {
 
+             mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            });
 
-
-    function swiperOnOff() {
-
-        if (window.innerWidth <= 768) {
-            for (let i = 0; i < hiddenElements.length; i++) {
-                if (hiddenElements[i].classList.contains('swiper-slide') === false) {
-                    hiddenElements[i].classList.add('swiper-slide');
-                }
-            }
-
-            if (document.querySelector('.swiper-container-initialized') === null){
-                var mySwiper = new Swiper('.swiper-container', {
-                    pagination: {
-                        el: '.swiper-pagination',
-                    },
-                });
-                console.log(1)
-            }
-
-        } else {
-
-            if (typeof mySwiper !== "undefined"){
-
-                mySwiper.destroy(true, true);
-                console.log(2)
-            }
-
-            for (let i = 0; i < hiddenElements.length; i++) {
-                if (hiddenElements[i].classList.contains('swiper-slide')) {
-                    hiddenElements[i].classList.remove('swiper-slide');
-
-                }
+        for (let i = 0; i < hiddenElements.length; i++) {
+            if (hiddenElements[i].classList.contains('swiper-slide') === false) {
+                hiddenElements[i].classList.add('swiper-slide');
             }
         }
-    }
 
-    window.onresize = swiperOnOff;
+        } else if (window.innerWidth > 768 && mySwiper !== undefined) {
 
+                    mySwiper.destroy(true, true);
+                    mySwiper = undefined;
+                    for (let i = 0; i < hiddenElements.length; i++) {
+                        if (hiddenElements[i].classList.contains('swiper-slide')) {
+                            hiddenElements[i].classList.remove('swiper-slide');
+                        }
+                    }
+                }
 
 }
+
+    swiperInitoff();
+
+
+
+    window.onresize = swiperInitoff;
+
+
+    // //slider swiper:
+    //
+    //
+    //
+    //
+    // if(window.innerWidth <= 768) {
+    //
+    //     var mySwiper = new Swiper('.swiper-container', {
+    //         pagination: {
+    //             el: '.swiper-pagination',
+    //         },
+    //     });
+    //
+    // }
+    //
+    //
+    // if(window.innerWidth > 768) {
+    //
+    //     for (let i = 0; i < hiddenElements.length; i++) {
+    //         if (hiddenElements[i].classList.contains('swiper-slide')) {
+    //             hiddenElements[i].classList.remove('swiper-slide');
+    //
+    //         }
+    //     }
+    // }
+    //
+    //
+    //
+    // function swiperOnOff() {
+    //
+    //     if (window.innerWidth <= 768) {
+    //
+    //
+    //         if (document.querySelector('.swiper-container-initialized') === null){
+    //             console.log(mySwiper)
+    //             var mySwiper = new Swiper('.swiper-container', {
+    //                 pagination: {
+    //                     el: '.swiper-pagination',
+    //                 },
+    //             });
+    //
+    //
+    //
+    //         }
+    //
+    //         for (let i = 0; i < hiddenElements.length; i++) {
+    //             if (hiddenElements[i].classList.contains('swiper-slide') === false) {
+    //                 hiddenElements[i].classList.add('swiper-slide');
+    //             }
+    //         }
+    //
+    //     } else {
+    //
+    //         if (typeof mySwiper !== "undefined"){
+    //             mySwiper.destroy(true, true);
+    //
+    //         }
+    //
+    //         for (let i = 0; i < hiddenElements.length; i++) {
+    //             if (hiddenElements[i].classList.contains('swiper-slide')) {
+    //                 hiddenElements[i].classList.remove('swiper-slide');
+    //             }
+    //         }
+    //     }
+    // }
+    //
+    // window.onresize = swiperOnOff;
+};
 
 
 
