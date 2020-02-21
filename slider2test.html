@@ -13,7 +13,6 @@
 <div class="container ">
 
 
-
     <div class="title-block">
         <p class="title-block__title">Ремонт техники различных брендов</p>
     </div>
@@ -84,10 +83,7 @@
             <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
 
-
         </div>
-
-
 
 
     <div class='group__read-more'>
@@ -96,48 +92,20 @@
     </div>
 
 
-
-
-
 </div>
 
-
-
-
-
-
-
-
-
 <script src="./js/swiper.min.js"></script>
-
 <script>
 
-
-
-
-
-
-
-
-
-var mySwiper = new Swiper('.swiper-container', {
-    pagination: {
-        el: '.swiper-pagination',
-    },
-});
-
-
-
+    let hiddenElements = document.querySelectorAll('.brand-block__brands');
 
     function swiperOnOff() {
 
         if (window.innerWidth <= 768) {
-
-                let hiddenElements = document.querySelectorAll('.brand-block__brands');
                 for (let i = 0; i < hiddenElements.length; i++) {
-
-                    hiddenElements[i].classList.add('swiper-slide');
+                    if (hiddenElements[i].classList.contains('swiper-slide') === false) {
+                        hiddenElements[i].classList.add('swiper-slide');
+                    }
                 }
 
             if (document.querySelector('.swiper-container-initialized') === null){
@@ -148,43 +116,24 @@ var mySwiper = new Swiper('.swiper-container', {
                 });
             }
 
-
     } else {
 
-
-            if (document.querySelector('.swiper-container-initialized') !== null){
+            if (typeof mySwiper !== "undefined"){
                 mySwiper.destroy(true, true);
             }
 
-
-            let hiddenElements = document.querySelectorAll('.brand-block__brands');
-
-
             for (let i = 0; i < hiddenElements.length; i++) {
-                if (hiddenElements[i].classList.contains("swiper-slide")) {
+                if (hiddenElements[i].classList.contains('swiper-slide')) {
                     hiddenElements[i].classList.remove('swiper-slide');
 
                 }
             }
-
         }
     }
 
     window.onresize = swiperOnOff;
 
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
 </body>
 </html>
 

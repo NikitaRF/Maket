@@ -25,6 +25,7 @@ body {
     letter-spacing: -0.2px;
     text-transform: uppercase;
     font-family: 'TTLakes';
+    margin-bottom: 16px;
 
 }
 
@@ -149,8 +150,13 @@ body {
 
 @media screen and (min-width: 768px) {
     .brand-block {
+        display: flex;
         flex-wrap: wrap;
         margin-left: 24px;
+        margin-top: 16px;
+        margin-left: 16px;
+        overflow: auto;
+
     }
 
     .group__read-more {
@@ -165,13 +171,6 @@ body {
 
     .title-block {
         background: linear-gradient(90deg, #F8F8F8 1.39%, #FFFFFF 100%);
-    }
-
-    .brand-block {
-        margin-top: 16px;
-        margin-left: 16px;
-        overflow: auto;
-        display: flex;
     }
 
     .swiper-pagination{
@@ -197,9 +196,6 @@ body {
         z-index: 1100;
     }
 
-    .swiper-pagination{
-        display:block !important;
-    }
 
 }
 

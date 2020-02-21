@@ -1,26 +1,20 @@
 window.onload = function() {
 
-    let hiddenElements = document.querySelectorAll('.brand-block__brands');
-    let hiddenBrandBlock = document.querySelector('.brand-block');
-
-
     if(window.innerWidth <= 768) {
 
-        hiddenBrandBlock.classList.remove('brand-block');
+        var mySwiper = new Swiper('.swiper-container', {
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
     }
 
     if(window.innerWidth > 768) {
 
-        if (typeof mySwiper !== "undefined"){
-            mySwiper.destroy(true, true);
-            document.querySelector('.swiper-pagination').style.display = 'none';
-        }
-
-
         let hiddenElements = document.querySelectorAll('.brand-block__brands');
 
         for (let i = 0; i < hiddenElements.length; i++) {
-            if (hiddenElements[i].classList.contains("swiper-slide")) {
+            if (hiddenElements[i].classList.contains('swiper-slide')) {
                 hiddenElements[i].classList.remove('swiper-slide');
 
             }
