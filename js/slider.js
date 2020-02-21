@@ -7,11 +7,10 @@ window.onload = function() {
                 el: '.swiper-pagination',
             },
         });
+
     }
 
     if(window.innerWidth > 768) {
-
-        let hiddenElements = document.querySelectorAll('.brand-block__brands');
 
         for (let i = 0; i < hiddenElements.length; i++) {
             if (hiddenElements[i].classList.contains('swiper-slide')) {
