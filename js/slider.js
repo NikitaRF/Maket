@@ -25,32 +25,25 @@ window.onload = function bbb () {
 
     //slider swiper:
 
-    if(window.innerWidth > 768) {
-
-        for (let i = 0; i < hiddenElements.length; i++) {
-            if (hiddenElements[i].classList.contains('swiper-slide')) {
-                hiddenElements[i].classList.remove('swiper-slide');
-
-            }
-        }
-    }
 
     var mySwiper = undefined;
     function swiperInitoff() {
 
     if (window.innerWidth <= 768 && mySwiper == undefined) {
-
-             mySwiper = new Swiper('.swiper-container', {
-                pagination: {
-                    el: '.swiper-pagination',
-                },
-            });
-
         for (let i = 0; i < hiddenElements.length; i++) {
             if (hiddenElements[i].classList.contains('swiper-slide') === false) {
                 hiddenElements[i].classList.add('swiper-slide');
             }
         }
+
+             mySwiper = new Swiper('.swiper-container', {
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+
+            });
+
+
 
         } else if (window.innerWidth > 768 && mySwiper !== undefined) {
 
