@@ -138,15 +138,23 @@ body {
 /* Media */
 
 @media screen and (min-width: 1120px) {
-    .brand-block__brands:nth-child(-n+8) {
+
+    .brand-block__brands__large-visible{
         display: flex;
     }
+
+    .brand-block__brands__medium-visible{
+        display: flex;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1120px) {
-    .brand-block__brands:nth-child(-n+6) {
+
+    .brand-block__brands__medium-visible{
         display: flex;
     }
+
 }
 
 @media screen and (min-width: 768px) {
