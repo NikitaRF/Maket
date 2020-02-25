@@ -7,16 +7,16 @@ window.onload = function bbb () {
     function visibleMore () {
 
         for (let i = 0; i < hiddenElements.length; i++){
-            if (hiddenElements[i].classList.contains("visible")) {
-                hiddenElements[i].classList.remove('visible');
-                hiddenElements[i].classList.add('unvisible');
+            if (hiddenElements[i].classList.contains("brand-block__brands--visible")) {
+                hiddenElements[i].classList.remove('brand-block__brands--visible');
+                hiddenElements[i].classList.add('brand-block__brands--unvisible');
                 buttonReadMore.innerHTML = "Показать все";
                 iconReadMore.style.transform = "rotate(360deg)";
             } else {
-                hiddenElements[i].classList.add('visible');
+                hiddenElements[i].classList.add('brand-block__brands--visible');
                 buttonReadMore.innerHTML = "Скрыть";
                 iconReadMore.style.transform = "rotate(180deg)";
-                hiddenElements[i].classList.remove('unvisible');
+                hiddenElements[i].classList.remove('brand-block__brands--unvisible');
             }
         }
     }
@@ -65,74 +65,6 @@ window.onload = function bbb () {
 
     window.onresize = swiperInitoff;
 
-
-    // //slider swiper:
-    //
-    //
-    //
-    //
-    // if(window.innerWidth <= 768) {
-    //
-    //     var mySwiper = new Swiper('.swiper-container', {
-    //         pagination: {
-    //             el: '.swiper-pagination',
-    //         },
-    //     });
-    //
-    // }
-    //
-    //
-    // if(window.innerWidth > 768) {
-    //
-    //     for (let i = 0; i < hiddenElements.length; i++) {
-    //         if (hiddenElements[i].classList.contains('swiper-slide')) {
-    //             hiddenElements[i].classList.remove('swiper-slide');
-    //
-    //         }
-    //     }
-    // }
-    //
-    //
-    //
-    // function swiperOnOff() {
-    //
-    //     if (window.innerWidth <= 768) {
-    //
-    //
-    //         if (document.querySelector('.swiper-container-initialized') === null){
-    //             console.log(mySwiper)
-    //             var mySwiper = new Swiper('.swiper-container', {
-    //                 pagination: {
-    //                     el: '.swiper-pagination',
-    //                 },
-    //             });
-    //
-    //
-    //
-    //         }
-    //
-    //         for (let i = 0; i < hiddenElements.length; i++) {
-    //             if (hiddenElements[i].classList.contains('swiper-slide') === false) {
-    //                 hiddenElements[i].classList.add('swiper-slide');
-    //             }
-    //         }
-    //
-    //     } else {
-    //
-    //         if (typeof mySwiper !== "undefined"){
-    //             mySwiper.destroy(true, true);
-    //
-    //         }
-    //
-    //         for (let i = 0; i < hiddenElements.length; i++) {
-    //             if (hiddenElements[i].classList.contains('swiper-slide')) {
-    //                 hiddenElements[i].classList.remove('swiper-slide');
-    //             }
-    //         }
-    //     }
-    // }
-    //
-    // window.onresize = swiperOnOff;
 };
 
 
